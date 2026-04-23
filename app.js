@@ -140,11 +140,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/health', (req, res) => {
-    console.log("Health endpoint hit");
     res.json({
         status: 'ok',
-        uptime: Math.floor((Date.now() - START_TIME) / 1000),
-        timestamp: new Date().toISOString(),
+        uptime: 123,
         version: '1.0.0'
     });
 });
