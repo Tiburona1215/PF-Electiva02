@@ -44,4 +44,6 @@ jobs:
 
       # 7. Deploy a Render (webhook)
       - name: Deploy a Render
-        run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
+        env:
+          RENDER_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: curl -X POST "$RENDER_HOOK"
