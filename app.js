@@ -1,4 +1,5 @@
 const express = require('express');
+const { version } = require('yargs');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const START_TIME = Date.now();
@@ -142,7 +143,8 @@ app.get('/health', (req, res) => {
     res.json({
         status: 'ok',
         uptime: Math.floor((Date.now() - START_TIME) / 1000),
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        version: '1.0.0'
     });
 });
 
